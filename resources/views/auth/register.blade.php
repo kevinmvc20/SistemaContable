@@ -75,7 +75,7 @@
                         Telefono
                     </label>
 
-                    <input id="telefono" name="telefono" type="text" 
+                    <input id="telefono" name="telefono" type="number" 
                         placeholder="Tu numero de telefono" class="border p-3 w-full rounded-lg @error('telefono') border-red-500  @enderror"
                         value="{{old('telefono')}}"
                     >
