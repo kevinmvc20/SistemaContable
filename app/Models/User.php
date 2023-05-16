@@ -47,4 +47,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Persona::class);
     }
+
+    public function periodo_contable(){
+        return $this->hasMany(PeriodoContable::class);
+    }
 }

@@ -105,7 +105,7 @@
                                 <a href="{{route('sucursales.index')}}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-300 dark:text-white dark:hover:bg-gray-700">Sucursal</a>
                                 </li>
                                 <li>
-                                <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-300 dark:text-white dark:hover:bg-gray-700">Periodo Contable</a>
+                                <a href="{{route('periodo_contables.index')}}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-300 dark:text-white dark:hover:bg-gray-700">Periodo Contable</a>
                                 </li>
                             </ul>
                         </div>

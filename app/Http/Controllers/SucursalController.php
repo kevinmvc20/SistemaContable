@@ -36,4 +36,15 @@ class SucursalController extends Controller
 
         return redirect()->route('sucursales.index');
     }
+
+    public function destroy($id)
+    {
+        $sucursal = Sucursal::findOrFail($id);
+        $sucursal->delete();
+
+        session()->flash('success', 'El registro ha sido eliminado correctamente.');
+
+
+        return redirect()->route('sucursales.index');
+    }
 }

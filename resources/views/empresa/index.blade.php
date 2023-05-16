@@ -32,6 +32,22 @@
             <td class="border px-4 py-2 text-center">{{$empresa->rubro}}</td>
             <td class="border px-4 py-2 text-center">{{$empresa->direccion}}</td>
             <td class="border px-4 py-2 text-center">{{$empresa->telefono}}</td>
+            <td class="border px-4 py-2 text-center">
+                <form action="{{ route('empresas.destroy', $empresa->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class=" bg-red-700 hover:bg-red-700 transition-colors 
+                    cursor-pointer uppercase font-bold p-3 text-white rounded-lg" onclick="confirmarEliminacion()" 
+                    type="submit">Eliminar</button>
+                    <script>
+                        function confirmarEliminacion() {
+                            if (confirm('¿Estás seguro de que deseas eliminar este registro?')) {
+                                document.getElementById('eliminar-form').submit();
+                            }
+                        }
+                    </script>
+                </form> 
+            </td>
         </tr>
         @endforeach
         </tbody>

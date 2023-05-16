@@ -17,6 +17,7 @@
             <th class="border px-4 py-2">Encargado</th>
             <th class="border px-4 py-2">Direccion</th>
             <th class="border px-4 py-2">Empresa</th>
+            <th class="border px-4 py-2">Opciones</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +27,14 @@
             <td class="border px-4 py-2 text-center">{{$sucursal->encargado}}</td>
             <td class="border px-4 py-2 text-center">{{$sucursal->direccion}}</td>
             <td class="border px-4 py-2 text-center">{{$sucursal->empresa->nombre}}</td>
-            
+            <td class="border px-4 py-2 text-center">
+                <form action="{{ route('sucursales.destroy', $sucursal->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class=" bg-red-700 hover:bg-red-700 transition-colors 
+                    cursor-pointer uppercase font-bold p-3 text-white rounded-lg" type="submit">Eliminar</button>
+                </form> 
+            </td>
         </tr>
         @endforeach
         </tbody>

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
-            $table->char('estado');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('empresa_id')->constrained()->onDelete('cascade');
             $table->timestamps();

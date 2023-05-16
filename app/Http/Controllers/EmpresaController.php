@@ -22,10 +22,10 @@ class EmpresaController extends Controller
         $this->validate($request,[
             'gerente' => 'required|max:30',
             'nit' => 'required',
-            'nombre' => 'required|max:250',
+            'nombre' => 'required|max:250|string',
             'rubro' => 'max:250|string',
             'direccion' => 'required|max:200',
-            'telefono' => 'required|max:20'
+            'telefono' => 'required|max:20|numeric'
         ]);
 
         Empresa::create([
@@ -36,6 +36,17 @@ class EmpresaController extends Controller
             'direccion' => $request->direccion,
             'telefono' => $request->telefono
         ]);
+
+        return redirect()->route('empresas.index');
+    }
+
+    public function destroy($id)
+    {
+        $empresa = Empresa::findOrFail($id);
+        $empresa->delete();
+
+        session()->flash('success', 'El registro ha sido eliminado correctamente.');
+
 
         return redirect()->route('empresas.index');
     }

@@ -54,7 +54,7 @@ class RegisterController extends Controller
         ]);
 
         //autenticar
-        auth()->attempt($request->only('email','password'));
+        //auth()->attempt($request->only('email','password'));
 
         //redireccionar
         return view('principal');

@@ -89,7 +89,7 @@
                         Telefono
                     </label>
                     
-                    <input id="telefono" name="telefono" type="text" placeholder="Añade un Telefono" class="border p-3 w-full rounded-lg
+                    <input id="telefono" name="telefono" type="number" placeholder="Añade un Telefono" class="border p-3 w-full rounded-lg
                         @error('telefono') border-red-500  @enderror"
                     >
 
